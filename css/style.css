@@ -1,0 +1,747 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+}
+
+:root {
+    --bg: #FFF;
+    --bg2: #FAFAFA;
+    --bg3: #252F3D;
+    --inv: #000;
+    --c1: #85BF55;
+    --c2: #2C7EF8;
+    --btt: #59AE43;
+    --c3: #5BB59A;
+    --c4: #F82C2C;
+    --p: #4D5254;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.carousel-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg3);
+    padding: 25px 20%;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+#prevButton,
+#nextButton {
+    display: none;
+}
+
+.carousel-container span {
+    display: flex;
+    align-items: center;
+    color: var(--bg);
+}
+
+.carousel-container span iconify-icon {
+    margin-right: 10px;
+    font-size: 2rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 25px 20%;
+}
+
+.logos img:nth-child(2) {
+    margin-left: auto;
+    padding-right: 30px;
+}
+
+.container {
+    flex-grow: 1;
+}
+
+.container h2 {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 48px;
+    font-weight: 500;
+}
+
+.container p {
+    text-align: center;
+    color: var(--p);
+    font-size: 24px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+    grid-gap: 15px;
+    width: 100%;
+    padding: 50px 20%;
+    list-style-type: none;
+}
+
+.steps li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.steps li:before {
+    content: counter(stepCounter);
+    counter-increment: stepCounter;
+    min-width: 30px;
+    min-height: 30px;
+    border: 2px solid var(--c2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.steps {
+    counter-reset: stepCounter;
+}
+
+.steps li:nth-child(1):before,
+.steps li:nth-child(2):before {
+    content: '\2713';
+    background-color: var(--c1);
+    border: 2px solid var(--c1);
+    color: var(--bg);
+}
+
+.steps li:nth-child(3) {
+    font-weight: bold;
+}
+
+.steps li:nth-child(3):before {
+    background-color: var(--c2);
+    color: var(--bg);
+}
+
+.steps li:last-child::before {
+    color: var(--c2);
+}
+
+.info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0px 20% 50px 20%;
+    background-color: var(--bg2);
+    border-radius: 10px;
+    grid-gap: 25px;
+    padding: 25px;
+}
+
+.productBig {
+    width: 100%;
+}
+
+.productBig img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.customer {
+    order: 3;
+}
+
+.customerInfo {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    align-items: center;
+    grid-gap: 10px;
+    padding: 25px;
+    background-color: var(--bg);
+    border-radius: 10px;
+}
+
+.customerPhoto {
+    width: 80%;
+    align-self: center;
+}
+
+.customerPhoto img {
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.customerStars span::before {
+    content: '★';
+    color: #FBBC04;
+    font-size: 1rem;
+}
+
+.customerName {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.customerName h3 {
+    font-size: 14px;
+}
+
+.customerName span {
+    color: var(--c3);
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+.customerName span iconify-icon {
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.customer p {
+    grid-column: span 2;
+    text-align: left;
+    font-size: 16px;
+}
+
+.product {
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.productBigM {
+    display: none;
+}
+
+.product h2 {
+    text-align: left;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.product h2 span {
+    color: var(--c2);
+}
+
+.productGrid {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) 3fr;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 0 15px;
+}
+
+.productSmall {
+    grid-row: span 2;
+}
+
+.productSmall img {
+    width: 100%;
+    background-color: var(--c2);
+    border-radius: 10px;
+}
+
+.productSmall img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.productTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.oldPrice {
+    margin-left: auto;
+    padding-right: 10px;
+    color: var(--p);
+    text-decoration: line-through;
+}
+
+.newPrice {
+    color: var(--c2);
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.productStars iconify-icon {
+    font-size: 1.11rem;
+    color: #FFC000;
+}
+
+.productStock {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 16px !important;
+    text-align: left !important;
+}
+
+.productStock:before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: var(--c2);
+    border: 5px solid #E3EEFF;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.productDesc {
+    grid-column-start: 2;
+    font-size: 16px !important;
+    text-align: left !important;
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.productFeatures li {
+    list-style-type: none;
+    padding-top: 10px;
+}
+
+.productFeatures li:before {
+    content: '\2713';
+    color: var(--c2);
+    font-size: 1.11em;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.discount {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #EDF3FD;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.percentage {
+    min-width: 30px;
+    min-height: 30px;
+    border-radius: 50%;
+    background-color: var(--c2);
+    color: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.discount p {
+    color: var(--inv);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.highlight {
+    color: var(--c2);
+}
+
+.claimDiscount {
+    padding: 15px;
+    border: unset;
+    background-color: #59AE43;
+    color: var(--bg);
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.claimDiscount::after {
+    content: '➜';
+    color: var(--bg);
+    margin-left: 15px;
+}
+
+.payments {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 10px;
+    border: 1px solid #CFCFCF;
+    border-radius: 4px;
+    color: var(--p);
+    padding: 10px;
+    font-size: 12px;
+}
+
+.payments span {
+    border-right: 1px solid #CFCFCF;
+}
+
+.payments span iconify-icon {
+    margin-right: 5px;
+}
+
+.refuse {
+    text-align: center;
+    color: var(--c4);
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.guarantee {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.guaranteeLogo {
+    width: 50%;
+    align-self: center;
+}
+
+.guaranteeLogo img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.guarantee p {
+    text-align: left;
+    font-size: 16px;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg3);
+    color: var(--bg);
+    padding: 44px 20%;
+    font-size: 16px;
+}
+
+footer span:first-child {
+    border-right: 1px solid var(--bg);
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+footer span:last-child {
+    justify-self: end;
+}
+
+footer span iconify-icon {
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+@media (max-width: 1366px) {
+    .carousel-inner {
+        padding: 25px 10%;
+    }
+
+    .logos {
+        padding: 25px 10%;
+    }
+
+    .steps {
+        padding: 50px 10%;
+    }
+
+    .info {
+        margin: 0px 10% 50px 10%;
+    }
+
+    .features {
+        gap: 11px;
+    }
+
+    .payments {
+        grid-gap: 5px;
+    }
+
+    footer {
+        padding: 44px 10%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .features {
+        gap: 20px;
+    }
+
+    .productGrid {
+        grid-gap: 0 50px;
+        align-items: flex-start;
+        grid-template-rows: 1fr;
+        grid-template-columns: minmax(0px, 1fr) 3fr !important;
+    }
+
+    .productSmall img {
+        width: 100%;
+    }
+
+    .productDesc {
+        grid-column-start: 2 !important;
+        text-align: left !important;
+    }
+
+    .guaranteeLogo {
+        width: 20% !important;
+        align-self: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-inner {
+        flex-direction: flex;
+        padding: 25px 1rem;
+    }
+
+    #prevButton,
+    #nextButton {
+        display: block;
+        border: unset;
+        background-color: var(--bg3);
+        color: var(--bg);
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .logos {
+        padding: 25px 1rem;
+    }
+
+    .logos img {
+        min-width: 0px;
+    }
+
+    .logos img:nth-child(2) {
+        margin-left: 50px;
+        padding-right: 10px;
+    }
+
+    .container h2,
+    .container p {
+        padding: 0px 1rem;
+    }
+
+    .container h2 {
+        font-size: 32px;
+    }
+
+    .container p {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    .steps {
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: center;
+        align-items: baseline;
+        padding: 25px 1rem;
+        grid-gap: 5px;
+    }
+
+    .steps li {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .info {
+        grid-template-columns: 1fr;
+        margin: 0;
+        padding: 1rem 1rem 2rem 1rem;
+    }
+
+    .customer {
+        font-size: 12px;
+        display: none;
+    }
+
+    .customerName {
+        gap: 0px;
+        justify-content: space-between;
+    }
+
+    .customerName span iconify-icon {
+        margin-right: 5px;
+    }
+
+    .customer p {
+        margin-top: 0;
+        padding: 0;
+    }
+
+    .productBig {
+        display: none;
+    }
+
+    .productBigM {
+        width: 100%;
+    }
+
+    .productBigM img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .productBigM {
+        display: block;
+    }
+
+    .product h2 {
+        padding: 0;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .productGrid {
+        align-items: flex-start;
+        grid-template-rows: 1fr;
+        grid-template-columns: minmax(0px, 1fr) 2fr;
+    }
+
+    .productDetails {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 100%;
+    }
+
+    .productTitle h3 {
+        font-size: 14px
+    }
+
+    .oldPrice {
+        font-size: 10px;
+    }
+
+    .newPrice {
+        font-size: 14px;
+    }
+
+    .productStock {
+        padding: 0 !important;
+        font-size: 12px !important;
+        text-align: left !important;
+    }
+
+    .productDesc {
+        grid-column: span 2;
+        padding: 0 !important;
+        font-size: 12px !important;
+        text-align: center !important;
+    }
+
+    .productFeatures li {
+        font-size: 12px;
+    }
+
+    .discount p {
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        font-size: 14px;
+    }
+
+    .claimDiscount {
+        font-size: 14px;
+    }
+
+    .payments {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 2fr;
+        grid-gap: 5px 0;
+    }
+
+    .payments span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-right: none;
+        border-bottom: 1px solid #CFCFCF;
+        padding: 5px 0;
+    }
+
+    .payments span:first-child {
+        border-right: 1px solid #CFCFCF;
+    }
+
+    .payments span iconify-icon {
+        margin-right: 5px;
+    }
+
+    .paymentMethods {
+        display: flex;
+        justify-content: center;
+        grid-column: span 2;
+    }
+
+    .refuse {
+        font-size: 12px;
+    }
+
+    .guarantee {
+        gap: 0px;
+    }
+
+    .guaranteeLogo {
+        width: 80%;
+        align-self: center;
+    }
+
+    .guaranteeLogo img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .guarantee p {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 25px 1rem;
+        font-size: 12px;
+    }
+}
